@@ -6,13 +6,10 @@ import {Login} from "@/components";
 
 export const PrivateRoute: FC<PropsWithChildren> = ({children}) => {
     const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
-
     return (
-        isAuthenticated ? <>{children}</> : (<>
+        isAuthenticated ? (<>{children}</>) : (<>
             <Text>You need to be authenticated please <Login/></Text>
 
         </>)
-
-
     );
 };
