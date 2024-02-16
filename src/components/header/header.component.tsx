@@ -3,14 +3,14 @@
 import React, {FC} from "react";
 import {
     Box,
-    Stack,
     Heading,
     Flex,
-    Text,
-    Button,
-    useDisclosure
 } from "@chakra-ui/react";
-export const Header:FC = () => {
+import {Login, Logout} from "@/components";
+import {useAuthStore} from "@/store/auth.store";
+
+export const Header: FC = () => {
+    const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
 
     return (
         <Flex
@@ -24,26 +24,16 @@ export const Header:FC = () => {
         >
             <Flex align="center" mr={5}>
                 <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-                   Todo App
+                    Todo App
                 </Heading>
             </Flex>
 
             <Box
-                display={{ base: isOpen ? "block" : "none", md: "block" }}
-                mt={{ base: 4, md: 0 }}
+                display={{base: 'block', md: "block"}}
+                mt={{base: 4, md: 0}}
             >
-                <Button
-                    variant="outline"
-                    _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-                >
-                    Login
-                </Button>
-                <Button
-                    variant="outline"
-                    _hover={{ bg: "teal.700", borderColor: "teal.700" }}
-                >
-                    Logout
-                </Button>
+                {isAuthenticated ? <Logout/> : <Login/>}
+
             </Box>
         </Flex>
     );

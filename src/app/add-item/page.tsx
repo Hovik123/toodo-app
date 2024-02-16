@@ -1,12 +1,16 @@
-import {ListItem, UnorderedList} from "@chakra-ui/react";
+'use client';
 
-export default function Home() {
+import {Button, FormControl, FormHelperText, FormLabel, Input, ListItem, UnorderedList} from "@chakra-ui/react";
+import {PrivateRoute} from "@/components/private-route/private-route.component";
+
+export default function AddItem() {
   return (
-      <UnorderedList>
-        <ListItem>Lorem ipsum dolor sit amet</ListItem>
-        <ListItem>Consectetur adipiscing elit</ListItem>
-        <ListItem>Integer molestie lorem at massa</ListItem>
-        <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-      </UnorderedList>
+      <PrivateRoute>
+          <FormControl>
+              <FormLabel>Content</FormLabel>
+              <Input type='text' />
+              <Button>Add new content</Button>
+          </FormControl>
+      </PrivateRoute>
   );
 }

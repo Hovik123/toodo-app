@@ -1,14 +1,20 @@
 'use client';
 
-import {Card, CardBody, List, ListIcon, ListItem, UnorderedList} from "@chakra-ui/react";
-import { MdCheckCircle, MdSettings } from "react-icons/md";
+import {Box, Card, CardBody} from "@chakra-ui/react";
+import {PrivateRoute} from "@/components/private-route/private-route.component";
 
 export default function Home() {
   return (
-      <Card>
-          <CardBody>
-              Text
-          </CardBody>
-      </Card>
+      <PrivateRoute>
+         <Box m={10}>
+             <Card>
+                 <CardBody>
+                     Text
+                 </CardBody>
+             </Card>
+         </Box>
+
+      </PrivateRoute>
+
   );
 }

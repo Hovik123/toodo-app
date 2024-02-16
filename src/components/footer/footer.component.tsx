@@ -1,8 +1,10 @@
-import {Flex, HStack,Text} from "@chakra-ui/react";
+import {Flex, HStack, Text} from "@chakra-ui/react";
+import {FC} from "react";
 
-export const Footer = () => {
+export const Footer: FC = () => {
     return (
         <Flex
+            className="footer"
             bg="white"
             width="100%"
             justifyContent="center"
