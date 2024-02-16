@@ -1,4 +1,4 @@
-import create from 'zustand';
+import {create} from 'zustand';
 export interface Todo {
     id: number;
     text: string;
